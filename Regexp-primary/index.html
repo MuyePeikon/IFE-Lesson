@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式之入门</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="container">
+        <input type="text" v-model="testStr">
+        <input type="text" v-model="regStr">
+        <button @click="findMatch()">验证</button>
+        <button @click="showTask1()">手机号码验证</button>
+        <button @click="showTask2()">相邻重复单词验证</button>
+        <h4>{{ regShow }}</h4>
+    </div>
+    <script src="../libs/Vue/vue.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
