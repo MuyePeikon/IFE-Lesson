@@ -16,11 +16,20 @@
             findMatch: function () {
                 var reg = eval(this.regStr);
                 this.regResult = this.testStr.match(reg);
-                if(!this.regResult) {
+                if (!this.regResult) {
                     this.regStatus = 2;
                 } else {
                     this.regStatus = 1;
-                }
+                    if (this.testStr.match(reg_CMCC)) {
+                        this.regResult = "中国移动：" + this.regResult;
+                    } else if (this.testStr.match(reg_CUCC)) {
+                        this.regResult = "中国联通：" + this.regResult;
+                    } else if (this.testStr.match(reg_CTCC)) {
+                        this.regResult = "中国电信：" + this.regResult;
+                    } else if (this.testStr.match(reg_Vir)) {
+                        this.regResult = "虚拟运营商：" + this.regResult;
+                    }
+                }。。。。。。。。。。。。。。
             },
             showTask1: function () {
                 this.regStr = reg_phone.toString();
@@ -46,8 +55,4 @@
             }
         }
     })
-
-    function regPhoneNumber(phone) {
-        // body...
-    }
 })();
